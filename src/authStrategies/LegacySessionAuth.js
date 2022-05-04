@@ -29,6 +29,7 @@ class LegacySessionAuth extends BaseAuthStrategy {
                     localStorage.setItem('WASecretBundle', session.WASecretBundle);
                     localStorage.setItem('WAToken1', session.WAToken1);
                     localStorage.setItem('WAToken2', session.WAToken2);
+                    localStorage.setItem('last-wid', session.LastWid);
                 }
   
                 localStorage.setItem('remember-me', 'true');
@@ -61,6 +62,7 @@ class LegacySessionAuth extends BaseAuthStrategy {
         }));
 
         return {
+            LastWid: localStorage['last-wid'],
             WABrowserId: localStorage.WABrowserId,
             WASecretBundle: localStorage.WASecretBundle,
             WAToken1: localStorage.WAToken1,
